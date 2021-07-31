@@ -1,44 +1,26 @@
-const palindrome = require('./palindrome-checker')
+const repeatStringNumTimes = require('./repeat-a-string')
 const assert = require('assert')
 
 describe('Tests', function () {
-  it('palindrome("eye") should return a boolean.', function () {
-    assert(typeof palindrome('eye') === 'boolean')
+  it('repeatStringNumTimes("*", 3) should return "***".', function () {
+    assert(repeatStringNumTimes('*', 3) === '***')
   })
-  it('palindrome("eye") should return true.', function () {
-    assert(palindrome('eye') === true)
+  it('repeatStringNumTimes("abc", 3) should return "abcabcabc".', function () {
+    assert(repeatStringNumTimes('abc', 3) === 'abcabcabc')
   })
-  it('palindrome("_eye") should return true.', function () {
-    assert(palindrome('_eye') === true)
+  it('repeatStringNumTimes("abc", 4) should return "abcabcabcabc".', function () {
+    assert(repeatStringNumTimes('abc', 4) === 'abcabcabcabc')
   })
-  it('palindrome("race car") should return true.', function () {
-    assert(palindrome('race car') === true)
+  it('repeatStringNumTimes("abc", 1) should return "abc".', function () {
+    assert(repeatStringNumTimes('abc', 1) === 'abc')
   })
-  it('palindrome("not a palindrome") should return false.', function () {
-    assert(palindrome('not a palindrome') === false)
+  it('repeatStringNumTimes("*", 8) should return "********".', function () {
+    assert(repeatStringNumTimes('*', 8) === '********')
   })
-  it('palindrome("A man, a plan, a canal. Panama") should return true.', function () {
-    assert(palindrome('A man, a plan, a canal. Panama') === true)
+  it('repeatStringNumTimes("abc", -2) should return "".', function () {
+    assert(repeatStringNumTimes('abc', -2) === '')
   })
-  it('palindrome("never odd or even") should return true.', function () {
-    assert(palindrome('never odd or even') === true)
-  })
-  it('palindrome("nope") should return false.', function () {
-    assert(palindrome('nope') === false)
-  })
-  it('palindrome("almostomla") should return false.', function () {
-    assert(palindrome('almostomla') === false)
-  })
-  it('palindrome("My age is 0, 0 si ega ym.") should return true.', function () {
-    assert(palindrome('My age is 0, 0 si ega ym.') === true)
-  })
-  it('palindrome("1 eye for of 1 eye.") should return false.', function () {
-    assert(palindrome('1 eye for of 1 eye.') === false)
-  })
-  it('palindrome("0_0 (: /-\ :) 0-0") should return true.', function () {
-    assert(palindrome('0_0 (: /- :) 0-0') === true)
-  })
-  it('palindrome("five|\_/|four") should return false.', function () {
-    assert(palindrome('five|_/|four') === false)
+  it('repeatStringNumTimes("abc", 0) should return "".', function () {
+    assert(repeatStringNumTimes('abc', 0) === '')
   })
 })
